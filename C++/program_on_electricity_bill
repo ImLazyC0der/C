@@ -1,0 +1,34 @@
+#include <iostream>
+#include <conio.h>
+using namespace std;
+int calc_Electricity(int);//function prototype
+int main()
+{
+    int unit=0;
+    cout<<"Enter total number of units consumed: ";
+    cin>>unit;
+    calc_Electricity(unit);//call the function to produced output
+    getch();
+    return 0;
+}
+int calc_Electricity(int unit){//function definition
+    double amount;
+    if(unit<=50)//When the statement is true
+    {//below 50 units
+        amount=unit*1.50;//this is executed, otherwise move to next
+    }
+    else if(unit<=150)//When the statement is true
+    {//below 150 units
+        amount=((50*1.5)+(unit-50)*2.00);//this is executed, otherwise move to next
+    }
+    else if((unit<=250)){//When the statement is true
+            //below 250 units
+        amount=(50*1.5)+((150-50)*2.00)+(unit-150)*3.00;//this is executed, otherwise move to next
+    }
+    else{//above 25 units
+        amount=(50*1.5)+((150-50)*2.00)+((250-150)*3.00)+(unit-250)*4;
+        //this is executed
+    }
+    cout<<"Electricity bill = Rs."<<amount;
+    //display the output on the screen
+}
